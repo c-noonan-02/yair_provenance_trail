@@ -9,6 +9,7 @@ View(pine_trait_data)
 pine_data <- read.delim("./data/fieldtraits_v2.txt")
 View(pine_data)
 
+# rename the columns in our dataset to better match the exisiting dataset
 pine_trait_data <-
   pine_trait_data %>%
   rename(
@@ -25,6 +26,7 @@ pine_trait_data <-
     RetentionLeft = retention_left
   )
 
+# combine the two datasets
 all_pine_data <- pine_data %>% inner_join(pine_trait_data, by = "FieldCode")
 View(filtered_pine_data)
 
